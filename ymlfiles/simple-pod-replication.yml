@@ -3,17 +3,17 @@ kind: ReplicationController
 metadata:
   name: simple-rc
 spec:
-  repicas: 2
+  replicas: 2
   selector:
     app: nginx
   template:
     metadata:
       labels:
         app: nginx
-        ver: 1.0
+        ver: "1.0"
     spec:
       containers:
       - name: simple-pod
-        image:  image
+        image: nginx
         ports:
         - containerPort: 80
