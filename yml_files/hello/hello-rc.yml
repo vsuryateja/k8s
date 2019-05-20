@@ -1,0 +1,21 @@
+apiVersion: v1
+kind : ReplicationController
+metadata:
+  name: hello-rc
+spec:
+  replicas: 4
+  selector:
+    app: hello-world
+    ver: v1
+  template:
+    metadata:
+      name: hello-world-template
+      labels:
+        app: hello-world
+        ver: v1
+    spec:
+      containers:
+      - name: hello-world
+        image: vsuryateja/hello-world:1-0-0-SNAPSHOT
+        ports:
+        - containerPort: 8080
