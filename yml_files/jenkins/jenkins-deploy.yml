@@ -1,5 +1,5 @@
 apiVersion: extensions/v1beta1
-Kind: Deployment
+kind: Deployment
 metadata:
   name: jenkins-deployment
 spec:
@@ -14,11 +14,11 @@ spec:
     metadata:
       labels:
         app: jenkins
-        ver: 2.162.2
+        ver: 2.164.2
     spec:
       containers:
       - name: jenkins
-        image: vsuryateja/jenkins:2.162.2
+        image: vsuryateja/jenkins:2.164.2
         ports:
         - containerPort: 8080
 
