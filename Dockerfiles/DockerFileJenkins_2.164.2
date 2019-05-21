@@ -1,0 +1,6 @@
+FROM tomcat:9.0.12-jre8
+LABEL author="Surya"
+RUN apt-get install wget -y
+WORKDIR /usr/local/tomcat/webapps/
+RUN wget http://mirrors.jenkins.io/war-stable/2.164.2/jenkins.war
+
