@@ -2,12 +2,16 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod
-  labels:
-    app: nginx
-    env: test
 spec:
   containers:
   - name: nginx
     image: nginx
     ports:
     - containerPort: 80
+    volumeMounts:
+    - name: test
+      mountPath: /test1/
+  volumes:
+  - name: test
+    hostPath:
+      path: /test1/
